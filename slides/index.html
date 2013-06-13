@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Cloud Computing: Demo</title>
+
+		<meta name="description" content="Cloud Computing: Demo">
+		<meta name="author" content="Anil">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Cloud Computing</h1>
+					
+				</section>
+
+				<section>
+					<h1>Google App Engine</h1>
+					<br>
+					<img src="img/google_appengine.png" alt="Googe AppEngine">
+					
+				</section>
+
+				<section>
+					<h1>OverView</h1>
+					<ul>
+						<li>Languages: Java, <font color="#ff0a00">Python</font></li>
+						<br>
+						<li>Runtime: <font color="#ff0a00">Webapp2</font>, Django, Jinja2</li>
+						<br>
+						<li>DataStore: <font color="#ff0a00">PythonAPI</font>, GQL</li>
+						<br>
+						<li>Scheduled Tasks: Cron Jobs</li>
+						<br>
+						<li>Development Tool: <font color="#ff0a00">dev_appserver.py</font></li>
+						<br>
+						<li>Production Tool: <font color="#ff0a00">appcfg.py</font></li>
+					</ul>
+				</section>				<section>
+					<h1> <a href="http://localhost:8080" >Hello World</a></h1>
+				</section>
+				<section>
+					<h2>Code: helloworld.py</h2>
+					<pre>
+						<code data-trim>
+import webapp2
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write('Hello, webapp2 World!')
+
+ 
+application = webapp2.WSGIApplication([('/', MainPage),], debug=True) 
+
+						</code>
+					</pre>
+
+				</section>
+				<section>
+					<h2>Config: app.yaml</h2>
+					<pre>
+						<code data-trim>
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: helloworld.application
+
+						</code>
+					</pre>
+
+				</section>
+				<section>
+					<h2>webapp2</h2>
+					<ul>
+						<li>Request Handler</li>
+						<li>WSGIApplication</li>
+						<li>map / to root</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Guestbook</h1>
+				</section>
+
+				<section>
+					<h2>Config: app.yaml</h2>
+					<pre>
+						<code data-trim>
+application: guestbook
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: latest
+handlers:
+- url: /.*
+  script: guestbook.application
+						</code>
+					</pre>
+				</section>
+				<section>
+                     <h2>Code: guestbook.py</h2>
+                     <ul>
+                     	<li>Simple Authentication</li>
+                     	<li>DataStore API</li>
+                     </ul>
+				</section>
+				<section>
+					<h1>Internet of Things</h1>
+				</section>
+				<section>
+					<table>
+						<tr>
+					<td><img src="img/iot3.jpg"></td>
+					<td><img src="img/iot2.jpg"></td>
+					</tr>
+					</table>
+				</section>
+				<section>
+					<blockquote>
+						&ldquo; We are heading into a new era of ubiquity,
+						where the users of the internet will be counted in billions, and humans may become the minority as generators and receivers of traffic. Changes brought about by the internet will be dwarfed by those prompted by the networking of everyday objects&rdquo;  <font color="#ff0a00"> - UN Report</font>
+					</blockquote>
+				</section>
+				<section>
+					<h2>Definition</h2>
+							<h3> <font color="#ff0a00">Marketing Definition</font>:</h3> <p align="left">Enable communication between devices to exchange useful information that create new value for human needs</p>
+				</section>
+				<section>
+					<img src="img/iot4.png">
+				</section>
+				<section>
+					<h2>Popular Communication Platforms</h2>
+					<ul>
+						<li>RFID</li>
+						<li>WSN: Zigbee, Wifi, GPRS, Bluetooth</li>
+						<li>GPS</li>
+					</ul>
+
+				</section>
+				<section>
+					<img src="img/iot5.jpg" width="700" height="500">
+				</section>
+				<section>
+					<h2>Applications</h2>
+					<ul>
+						<li>Supply Chain Management</li>
+						<li>Cyber hysical Systems</li>
+						<li>Logistics and Retailing</li>
+						<li>Smart Grid, Smart Buildings</li>
+					</ul>
+
+				</section>
+					<section>
+						
+					<section data-state="alert">
+						<h2>Smart Cities </h2>
+						<ul>
+						<li>Smart Parking</li>
+						<li>Traffic Congestion</li>
+						<li>Smart Lighting</li>
+						<li>Smart Transportation</li>
+					</ul>
+					</section>
+					<section data-state="blackout">
+						<h2>Smart Environments</h2>
+						<ul>
+						<li>Forest Fire Detection</li>
+						<li>Air Pollution Monitor</li>
+						<li>Early Earthquake Detection</li>
+					</ul>
+					</section>
+					<section data-state="soothe">
+						<h2>Retail</h2>
+						<ul>
+						<li>NFC Payment: Payment based on location</li>
+						<li>Intelligent Shopping Experience: Dynamic sales feed based on customer preferences</li>
+						<li>Smart Production: Control of product rotation</li>
+					</ul>
+					</section>
+					<section data-state="blackout">
+						<h2>Home Automation</h2>
+						<ul>
+						<li>Energy and Water Use</li>
+						<li>Remote Control of Appliances</li>
+						<li>Intrusion Detection System</li>
+					</ul>
+					</section>
+					<section data-state="soothe">
+						<h2>eHealth</h2>
+						<ul>
+						<li>Fall Detection</li>
+						<li>Sportsman Care</li>
+						<li>Patient Surveillance</li>
+					</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Anil</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
