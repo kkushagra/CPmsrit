@@ -1287,5 +1287,14 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
-
+.cover
+ {
+  border:1px solid #fefefe;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px; 
+    word-wrap: break-word;
+    border-radius:0px 0px 5px 5px;
+ }
 

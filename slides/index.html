@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>Cloud Computing: Demo</title>
+		<title>Competitive Programming</title>
 
 		<meta name="description" content="Cloud Computing: Demo">
 		<meta name="author" content="Anil">
@@ -33,28 +33,196 @@
 	<body>
 
 		<div class="reveal">
-
+			<div align="center">
+			<a href="#/st">Start</a> | <a href="#/cc">Go to Course Content</a> | <a href="#/ha">Contact</a>
+			</div>
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
-					<h1>Cloud Computing</h1>
+				<section id="st">
+					<h2>Competitive Programming</h2>
+					<blockquote>
+			&ldquo;First learn computer science and all the theory. Next develop a programming style. Then forget all that and just hack. &rdquo; - George Carrette
+
+					</blockquote>	
+					
 					
 				</section>
 
 				<section>
-					<h1>Google App Engine</h1>
-					<br>
-					<img src="img/google_appengine.png" alt="Googe AppEngine">
-					
+					<h2> Wait for it....</h2>
+					<ol>
+						<li>
+						<a href="http://www.catb.org/esr/faqs/hacker-howto.html" target="_blank"> How to Become a Hacker</a>
+						</li>
+						<li>
+							<a href="http://www.catb.org/esr/faqs/smart-questions.html" target="_blank">How to Ask Smart Questions</a>
+						</li>
+					</ol>
+				</section>
+				<section id="cc">
+					<h2>Course Content</h2>
+					<ol>
+						<li>
+							<a href="#/c1">Getting Started</a>
+						</li>
+						<li>
+							<a href="#/c2">Number Theory</a>
+						</li>
+						<li>
+							<a href="#/c3">Data Structures and libraries</a>
+						</li>
+						<li>
+							<a href="#/c4">Problem Solving Paradigms</a>
+						</li>
+						<li>
+							<a href="#/c5">Graphs</a>
+						</li>
+						<li>
+							<a href="#/c6">String Processing</a>
+						</li>
+						<li>
+							<a href="#/c7">Sorting</a>
+						</li>
+						<li>
+							<a href="#/c8">Combinatorics</a>
+						</li>
+						<li>
+							<a href="#/c9">Dynamic Programming</a>
+						</li>	
+
+					</ol>						
+				</section>
+				<section id="c1" >
+					<h3>Standard I/O</h3>
 				</section>
 
+					<section>
+										<section>
+						Input: first line is number of test cases and followed by testcases in each line.
+
+						<pre>
+							<code data-trim>
+5
+1 2 
+3 4
+5 6
+7 8
+9 10
+</code>
+</pre>
+Output: answer for each input in separate lines
+
+						<pre>
+							<code data-trim>
+3
+7
+11
+15
+19
+</code>
+</pre>
+
+					</section>
+						<section>
+					C
+					<pre>
+						<code style="word-wrap: break-word;" data-trim>
+int main(){
+  int test_cases = 0;
+  int arg1, arg2;
+  scanf("%d", &test_cases);
+  while (test_cases--){
+    scanf("%d", &arg1);
+    scanf("%d", &arg2);
+    // perform operation here
+    printf("%d\n",(arg1 + arg2));
+  }
+}
+ 
+
+						</code>
+					</pre>
+					</section>
+					<section>
+					C++
+					<pre>
+						<code style="word-wrap: break-word;" data-trim>
+
+using namespace std;
+
+int main(){
+  int test_cases = 0;
+  int arg1, arg2;
+  cin >> test_cases;
+  while (test_cases--){
+    cin >> arg1;
+    cin >> arg2;
+    // perform operation here
+    cout << (arg1 + arg2) << endl;
+  }
+}
+
+
+
+						</code>
+					</pre>
+				</section>
 				<section>
-					<h1>OverView</h1>
+					Java
+					<pre>
+						<code style="word-wrap: break-word;"data-trim>
+import java.io.*;
+
+public class Std {   // save as Main.java
+   public static void main(String[] args) throws IOException{
+      String         s;
+      BufferedReader stdin;      
+      String test_cases;
+      int t, arg1, arg2, result;
+      String[] in;
+      stdin = new BufferedReader(new InputStreamReader(System.in));
+      test_cases = stdin.readLine();
+      t = Integer.parseInt(test_cases);
+      while (t > 0){
+         s = stdin.readLine();
+         in = s.split(" ");
+         arg1 = Integer.parseInt(in[0]);
+         arg2 = Integer.parseInt(in[1]);
+         result = arg1 + arg2;
+         System.out.println(result);
+         t = t - 1;
+      }
+   }
+}
+
+						</code>
+					</pre>
+				</section>
+				<section>
+				Python
+				<pre>
+						<code style="word-wrap: break-word;"data-trim>
+test_cases = raw_input() #Default input type is string
+test_cases = int(test_cases)
+while test_cases:
+	arg1,arg2  = raw_input().split() 
+	arg1 = int(arg1)
+	arg2 = int(arg2)
+	print arg1 + arg2
+	test_cases = test_cases - 1
+
+						</code>
+					</pre>
+				</section>
+				</section>
+<!--
+				<section>
+					<h2>OverView</h2>
 					<ul>
-						<li>Languages: Java, <font color="#ff0a00">Python</font></li>
+						<li>Languages: Java, <span style="color: yellow;">Python</span></li>
 						<br>
-						<li>Runtime: <font color="#ff0a00">Webapp2</font>, Django, Jinja2</li>
+						<li>Runtime: <span style="color: yellow;">Webapp2</span>, Django, Jinja2</li>
 						<br>
 						<li>DataStore: <font color="#ff0a00">PythonAPI</font>, GQL</li>
 						<br>
@@ -231,11 +399,31 @@ handlers:
 					</section>
 				</section>
 
+-->
+				<section id="ha">
+					<div align="center">
+					<table>
+						<tr>
+							<td>
+								Hacker:
+							</td>
+							<td>
+								MAK
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Twitter:
+							</td>
+							<td>
+								<a href="http://www.twitter.com/4ni1">@4ni1</a>
+							</td>
+						</tr>
 
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Anil</h3>
+					</table>
+				</div>
 				</section>
+			
 
 			</div>
 
