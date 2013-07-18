@@ -1,20 +1,30 @@
 #include<iostream>
+#define ll long long
 using namespace std;
-long long int count;
-long long int cycle(long long int); 
+ll count;
+int cycle(ll); 
 int main()
 {
-	long long int a,s;
+	ll a,s;
 	while(cin>>a>>s)
 	{
-		long long int big=0,test;
-		if(s % 2 == 0)
-			s--;
-		for(long long int i=s;i>=a;i-=2)
+		ll big=0,test;
+		ll q,w;
+		if(a>s)
+		{
+			q=s;
+			w=a;
+		}
+		else
+		{
+			q=a;
+			w=s;
+		}
+
+		for(ll i=q;i<=w;i++)
 		{
 			count=0;
 			test = cycle(i);
-//			cout<<i<<" "<<count<<endl;
 			if(big<count)
 				big=count;
 
@@ -24,7 +34,7 @@ int main()
 	
 	return 0;
 }
-long long int cycle(long long int i)
+int cycle(ll i)
 {
 	count++;
 	if(i==1)
