@@ -31,7 +31,7 @@ int main()
 		if(flag == 0)
 			cout<<"Jolly"<<endl;
 		else
-			cout<<"Not jolly"<<endl;
+			cout<<"Not Jolly"<<endl;
 	}
 	return 0;
 }

@@ -1,18 +1,20 @@
 #include<iostream>
 using namespace std;
-long int count;
-int cycle(long int); 
+long long int count;
+long long int cycle(long long int); 
 int main()
 {
-	long int a,s;
+	long long int a,s;
 	while(cin>>a>>s)
 	{
-		long int big=0,test;
-
-		for(long int i=s;i>=a;i--)
+		long long int big=0,test;
+		if(s % 2 == 0)
+			s--;
+		for(long long int i=s;i>=a;i-=2)
 		{
 			count=0;
 			test = cycle(i);
+//			cout<<i<<" "<<count<<endl;
 			if(big<count)
 				big=count;
 
@@ -22,7 +24,7 @@ int main()
 	
 	return 0;
 }
-int cycle(long int i)
+long long int cycle(long long int i)
 {
 	count++;
 	if(i==1)
